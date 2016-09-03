@@ -1,0 +1,10 @@
+{% for address in contact.adresses %}
+    <p>{{ address.city }}</p>
+    <p>{{ address.street }} {{ address.houseNum }}/{{ address.apartmentNum }}
+        <a href="{{ path('app_address_modify', {'id': address.id}) }}"> Modify address</a>
+        <a href="{{ path('app_address_delete', {'id': address.id}) }}"> Delete address</a>
+    </p>
+{% else %}
+    <p>address not found</p>
+{% endfor %}
+<a href="{{ path('app_address_new', {'user_id': contact.id}) }}">Add address</a>

@@ -1,0 +1,10 @@
+{% for phone in contact.phones %}
+    <p>
+        {{ phone.type }}: {{ phone.phoneNumber }}
+        <a href="{{ path('app_phone_modify', {'id': phone.id}) }}">Modify phone</a>
+        <a href="{{ path('app_phone_delete', {'id': phone.id}) }}">Delete phone</a>
+    </p>
+{% else %}
+    <p>phone not found</p>
+{% endfor %}
+<a href="{{ path('app_phone_new', {'contact_id': contact.id}) }}">Add phone</a>

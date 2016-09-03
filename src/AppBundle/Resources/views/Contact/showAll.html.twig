@@ -1,0 +1,12 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    {% for contact in contacts %}
+        <p>
+            <a href="{{ path("app_contact_show", {'id': contact.id}) }}">{{ contact.name }} {{ contact.surname }}</a>
+            <a href="{{ path("app_contact_modify", {'id': contact.id}) }}">Modify</a>
+            <a href="{{ path("app_contact_delete", {'id': contact.id}) }}">Delete</a>
+        </p>
+    {% endfor %}
+{% endblock %}
+

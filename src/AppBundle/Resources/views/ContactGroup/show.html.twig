@@ -1,0 +1,13 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <p>Nazwa grupy: {{ group.name }}</p>
+    <ul>
+        {% for contact in group.contacts %}
+            <li><a href="{{ path('app_contact_show', {'id': contact.id }) }}">{{ contact.name }} {{ contact.surname }}</a></li>
+        {% else %}
+           <p>No contacts in this group</p>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

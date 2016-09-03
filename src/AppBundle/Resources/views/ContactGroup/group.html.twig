@@ -1,0 +1,6 @@
+{% for group in contact.groups %}
+    <p><a href="{{ path("app_contactgroup_show", {'id': group.id}) }}">{{ group.name }}</a></p>
+{% else %}
+    <p>Groups not found</p>
+{% endfor %}
+<a href="{{ path('app_contact_addtogroup', {'id': contact.id })}}">Add contact to another group</a>

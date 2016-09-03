@@ -1,0 +1,10 @@
+{% for email in contact.emails %}
+    <p>
+        {{ email.type }}: {{ email.emailAddress }}
+        <a href="{{ path('app_email_modify', {'id': email.id}) }}">Modify email</a>
+        <a href="{{ path('app_email_delete', {'id': email.id}) }}">Delete email</a>
+    </p>
+{% else %}
+    <p>email not found</p>
+{% endfor %}
+<a href="{{ path('app_email_new', {'contact_id': contact.id}) }}">Add email</a>

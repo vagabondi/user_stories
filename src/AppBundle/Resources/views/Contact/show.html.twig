@@ -1,0 +1,18 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <p>Imie i nazwisko: </p>
+    <p>{{ contact.name }} {{ contact.surname }}</p>
+    <p>Description: </p>
+    <p>{{ contact.description }}</p>
+    <p><a href="{{ path('app_contact_modify', {'id': contact.id}) }}">Modify contact</a></p>
+    <p>Address: </p>
+    {% include('AppBundle:Address:address.html.twig') %}
+    <p>Phone: </p>
+    {% include('AppBundle:Phone:phone.html.twig') %}
+    <p>Email: </p>
+    {% include('AppBundle:Email:email.html.twig') %}
+    <p>Groups: </p>
+    {% include('AppBundle:ContactGroup:group.html.twig') %}
+{% endblock %}
+
